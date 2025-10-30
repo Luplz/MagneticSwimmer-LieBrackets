@@ -222,9 +222,12 @@ MassMatInv = Inverse[MassMat];
 
 (* Determinant *)
 indices = {1, 2, 6, 8, 10};
-MassMatplan = MassMat[[indices, indices]]
+MassMatplan = MassMat[[indices, indices]];
 Determinant = Simplify[Det[MassMatplan]];
 Print["Det =", Determinant];
+DeterminantExpansion = Series[Determinant, {phi1z, 0, 0}, {phi2z, 0, 0}, {tz, 0, 0}];
+DeterminantExpansion = Simplify[DeterminantExpansion];
+Print["DetExpansion =", DeterminantExpansion];
 
 
 
